@@ -2,24 +2,28 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-03T11:56:22 EET" name="Default suite" finished-at="2024-06-03T11:56:25 EET" duration-ms="3777">
+  <suite started-at="2024-06-03T14:11:12 EET" name="Default suite" finished-at="2024-06-03T14:11:15 EET" duration-ms="2947">
     <groups>
     </groups>
-    <test started-at="2024-06-03T11:56:22 EET" name="Default test" finished-at="2024-06-03T11:56:25 EET" duration-ms="3777">
+    <test started-at="2024-06-03T14:11:12 EET" name="Default test" finished-at="2024-06-03T14:11:15 EET" duration-ms="2947">
       <class name="TestCases">
-        <test-method signature="Login()[pri:1, instance:TestCases@7642df8f]" started-at="2024-06-03T11:56:22 EET" name="Login" finished-at="2024-06-03T11:56:25 EET" duration-ms="3228" status="PASS">
+        <test-method is-config="true" signature="Setup()[pri:0, instance:TestCases@10b9db7b]" started-at="2024-06-03T14:11:12 EET" name="Setup" finished-at="2024-06-03T14:11:12 EET" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Setup -->
+        <test-method signature="Login()[pri:1, instance:TestCases@10b9db7b]" started-at="2024-06-03T14:11:12 EET" name="Login" finished-at="2024-06-03T14:11:14 EET" duration-ms="2714" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="testProductTitle()[pri:2, instance:TestCases@7642df8f]" started-at="2024-06-03T11:56:25 EET" name="testProductTitle" description="A word &#039;Products&#039; should be appear after login" finished-at="2024-06-03T11:56:25 EET" duration-ms="69" status="PASS">
+        <test-method signature="testProductTitle()[pri:2, instance:TestCases@10b9db7b]" started-at="2024-06-03T14:11:14 EET" name="testProductTitle" description="A word &#039;Products&#039; should be appear after login" finished-at="2024-06-03T14:11:15 EET" duration-ms="41" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testProductTitle -->
-        <test-method signature="testPriceFilter()[pri:3, instance:TestCases@7642df8f]" started-at="2024-06-03T11:56:25 EET" name="testPriceFilter" description="The system should sort the products from lowest to highest price" finished-at="2024-06-03T11:56:25 EET" duration-ms="299" status="PASS">
+        <test-method signature="testPriceFilter()[pri:3, instance:TestCases@10b9db7b]" started-at="2024-06-03T14:11:15 EET" name="testPriceFilter" description="The system should sort the products from lowest to highest price" finished-at="2024-06-03T14:11:15 EET" duration-ms="103" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testPriceFilter -->
-        <test-method signature="testLowestPriceFilter()[pri:4, instance:TestCases@7642df8f]" started-at="2024-06-03T11:56:25 EET" name="testLowestPriceFilter" description="The first product appear should be the lowest product price" finished-at="2024-06-03T11:56:25 EET" duration-ms="119" status="PASS">
+        <test-method signature="testLowestPriceFilter()[pri:4, instance:TestCases@10b9db7b]" started-at="2024-06-03T14:11:15 EET" name="testLowestPriceFilter" description="Verify that the system sort the products from lowest to highest" finished-at="2024-06-03T14:11:15 EET" duration-ms="50" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLowestPriceFilter -->

@@ -5,7 +5,8 @@
     <classes>
       <class name="TestCases">
         <methods>
-          <include name="testPriceFilter"/>
+          <include name="testLowestPriceFilter"/>
+          <include name="Setup"/>
         </methods>
       </class> <!-- TestCases -->
     </classes>
