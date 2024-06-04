@@ -69,7 +69,7 @@ public class TestCases {
 
 		for (int j = 1; j < pricesAsNumber.size(); j++) {
 			ActuallowestPrice = pricesAsNumber.get(0);
-			System.out.println(ActuallowestPrice + " > " + pricesAsNumber.get((j)));
+			System.out.println(ActuallowestPrice + " < " + pricesAsNumber.get((j)));
 			Assert.assertEquals(ActuallowestPrice < pricesAsNumber.get((j)), true, "The First Price is not the lowest price");
 
 		}
