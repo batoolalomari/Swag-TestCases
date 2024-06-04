@@ -51,7 +51,7 @@ public class TestCases {
 	@Test(priority = 3, description = "The system should sort the products from lowest to highest price")
 	public void testPriceFilter() {
 //		best practice to use Select	
-		WebElement selectedElement = driver.findElement(By.className("product_sort_container"));
+		WebElement selectedElement = driver.findElement(By.xpath("//select[@data-test=\"product-sort-container\"]"));
 		Select selector = new Select(selectedElement);
 		selector.selectByIndex(2);
 
