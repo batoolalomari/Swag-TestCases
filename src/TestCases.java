@@ -2,7 +2,9 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -42,48 +44,35 @@ public class TestCases {
 
 //		no id for the the element so i used the best practice for xpath
 		String ActualTitle = driver.findElement(By.xpath("//span[@data-test='title']")).getText();
-
-		System.out.println("Actual Title: " + ActualTitle);
-		System.out.println("Expected Title: " + expectedTitle);
-		Assert.assertEquals(ActualTitle, expectedTitle);
+		Assert.assertEquals(ActualTitle, expectedTitle,"The system display another word");
 
 	}
 
 	@Test(priority = 3, description = "The system should sort the products from lowest to highest price")
 	public void testPriceFilter() {
-
-//		no id for the the element so i used the best practice for xpath
-//		do not use this way because it select the first match one
-//		driver.findElement(By.xpath("//select[@data-test='product-sort-container']")).click();
-//		driver.findElement(By.xpath("//option[@value='lohi']")).click();
-		
-//		best practice to use xpath
-//		WebElement selectedElement=driver.findElement(By.xpath("//select[@data-test='product-sort-container']"));
-		
 //		best practice to use Select	
-		WebElement selectedElement=driver.findElement(By.className("product_sort_container"));
-		Select selector=new Select(selectedElement);
+		WebElement selectedElement = driver.findElement(By.className("product_sort_container"));
+		Select selector = new Select(selectedElement);
 		selector.selectByIndex(2);
-//		selector.selectByValue("lohi");
-//		selector.selectByVisibleText("Price (low to high)");
-		
+
 	}
 
 	@Test(priority = 4, description = "Verify that the system sort the products from lowest to highest")
 	public void testLowestPriceFilter() {
-		String expectedLowestPrice = "$7.99";
-		List<WebElement> prices=driver.findElements(By.className("inventory_item_price"));
-		
-		String ActualLowestPrice="" ;
+		List<WebElement> prices = driver.findElements(By.className("inventory_item_price"));
+		List<Double> pricesAsNumber = new ArrayList<Double>();
+		Double ActuallowestPrice = 0.0;
+
 		for (int i = 0; i < prices.size(); i++) {
-			
-			ActualLowestPrice=prices.get(0).getText();
-			
+			pricesAsNumber.add((Double.parseDouble(prices.get(i).getText().replace("$", ""))));
 		}
-		
-		System.out.println("Actual Price " + expectedLowestPrice);
-		System.out.println("Expected Price " + ActualLowestPrice);
-		Assert.assertEquals(ActualLowestPrice, expectedLowestPrice);
+
+		for (int j = 1; j < pricesAsNumber.size(); j++) {
+			ActuallowestPrice = pricesAsNumber.get(0);
+			System.out.println(ActuallowestPrice + " > " + pricesAsNumber.get((j)));
+			Assert.assertEquals(ActuallowestPrice < pricesAsNumber.get((j)), true, "The First Price is not the lowest price");
+
+		}
 
 	}
 
